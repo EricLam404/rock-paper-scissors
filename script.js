@@ -1,7 +1,7 @@
 var playerScore = 0;
 var computerScore = 0;
 var scoreboard = document.createElement('div');
-const scoreContainer = document.querySelector("h1");
+const scoreContainer = document.querySelector(".scoreboard");
 
 scoreboard.textContent = "Player: " + playerScore + " vs Computer: " + computerScore;
 scoreContainer.appendChild(scoreboard)
@@ -16,6 +16,8 @@ let playRound = (playerSelection, computerSelection) => {
     playerSelection = playerSelection ? playerSelection.toLowerCase() : null; 
     if(playerSelection == "rock"){
         if(computerSelection == "rock"){
+            computerScore++; 
+            playerScore++;
             return "You tied! Rock ties with Rock" 
         }
         if(computerSelection == "paper"){
@@ -33,6 +35,8 @@ let playRound = (playerSelection, computerSelection) => {
             return "You won! Paper beats Rock" 
         }
         if(computerSelection == "paper"){
+            computerScore++; 
+            playerScore++;
             return "You tied! Paper ties with paper" 
         }
         if(computerSelection == "scissor"){
@@ -50,6 +54,8 @@ let playRound = (playerSelection, computerSelection) => {
             return "You won! Scissor beats Paper" 
         }
         if(computerSelection == "scissor"){
+            computerScore++; 
+            playerScore++;
             return "You tied! Scissor ties with Scissor" 
         }     
     }
@@ -71,8 +77,10 @@ function playerSelection(e) {
         scoreboard.textContent = "Player: " + playerScore + " vs Computer: " + computerScore;
         const div = document.createElement('div');
         div.textContent = winner;
+        div.classList.add("won")
         const vs = document.createElement('div');
         vs.textContent = playerSelection + " vs " + computerSelection;
+        vs.classList.add("vs")
         container.appendChild(vs);
         container.appendChild(div);
     } else if(count <= 5){
@@ -84,6 +92,7 @@ function playerSelection(e) {
         else
             winner = "The computer won"
         win.textContent = winner;
+        win.classList.add("win");
         container.appendChild(win);
     }
     

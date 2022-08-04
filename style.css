@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    margin: 10px;
+    width: 80px;
+    height: 30px;
+    background-color: aqua;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+h1 {
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 400px;
+    border: 3px solid black;
+    padding: 20px;
+    font-size: 18px;
+    justify-content: flex-end;
+}
+
+.scoreboard {
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.win {
+    font-size: 25px;
+    font-weight: bolder;
+    color: red;
+}
+
+.won {
+    font-weight: bolder;
+}
+
+.vs {
+    text-transform: capitalize;
+}
